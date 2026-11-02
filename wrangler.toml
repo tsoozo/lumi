@@ -1,0 +1,32 @@
+name = "lumi"
+main = "src/worker.ts"
+compatibility_date = "2026-11-01"
+compatibility_flags = ["nodejs_compat"]
+
+[assets]
+directory = "./dist"
+not_found_handling = "single-page-application"
+run_worker_first = ["/api/*"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "lumi-db"
+database_id = "REPLACE_WITH_ID_FROM_wrangler_d1_create"
+migrations_dir = "migrations"
+
+[[r2_buckets]]
+binding = "PRIVATE_FILES"
+bucket_name = "lumi-private"
+
+[[r2_buckets]]
+binding = "PUBLIC_FILES"
+bucket_name = "lumi-public"
+
+[triggers]
+crons = ["*/15 * * * *"]
+
+[vars]
+APP_URL = "http://localhost:8787"
+R2_ACCOUNT_ID = ""
+PUBLIC_FILES_BASE_URL = ""
+EMAIL_FROM = "Lumi <noreply@example.com>"

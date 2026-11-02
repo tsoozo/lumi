@@ -1,0 +1,10 @@
+# cp .dev.vars.example .dev.vars  (local dev only; production: wrangler secret put <NAME>)
+SESSION_SECRET=change-me-long-random
+BANK_ENCRYPTION_KEY=base64-32-bytes-run-openssl-rand-base64-32
+TELEGRAM_BOT_TOKEN=
+TELEGRAM_WEBHOOK_SECRET=change-me
+RESEND_API_KEY=
+R2_ACCESS_KEY_ID=
+R2_SECRET_ACCESS_KEY=
+# First super admin email (gets admin role on first login)
+BOOTSTRAP_ADMIN_EMAIL=
